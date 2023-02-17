@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <h1>Monty Hall</h1>
+        <h1>Monty Hall problem</h1>
         <hr/>
         <gameSettings v-if="!gameStarted" @start="gameStarted = true"
         />

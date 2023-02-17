@@ -29,18 +29,23 @@ export default {
     methods: {
         isTreasure() {
             if(this.index == this.treasure && !this.isOpen) {
+                //Open the right chest
                 this.imageSrc = require('../../public/treasure-chest.png')
                 this.gameFinished = true
                 this.$emit('win', this.gameFinished)
             } else if(this.index == this.treasure && this.isOpen) {
+                //Close the right chest
                 this.imageSrc = require('../../public/closed-chest.png')
                 this.gameFinished = false
                 this.$emit('win', this.gameFinished)
             } else if(this.index != this.treasure && !this.isOpen) {
+                //Open an empty chest
                 this.imageSrc = require('../../public/empty-chest.png')
             } else if(this.isOpen && this.isSelected) {
+                //close the chest when is already selected
                 this.imageSrc = require('../../public/closed-chest-selected.png')
             } else if(this.isOpen && !this.isSelected) {
+                //close a chest without selection
                 this.imageSrc = require('../../public/closed-chest.png')
             }
             this.isOpen = !this.isOpen
